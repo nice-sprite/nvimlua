@@ -11,23 +11,56 @@ return require('packer').startup(function(use)
 
     use 'rmehri01/onenord.nvim'
     use 'ray-x/aurora'
-    use({
-	    'ramojus/mellifluous.nvim',
-	    requires = { 'rktjmp/lush.nvim' },
-	    config = function()
-		    require'mellifluous'.setup({ --[[...]] }) -- optional, see configuration section.
-		    vim.cmd('colorscheme mellifluous')
-	    end,
-    })
 
     use 'theprimeagen/harpoon'
     use 'mbbill/undotree'
 
+    -- colorschemes + related aesthetics
     use 'mofiqul/vscode.nvim'
     use 'rafcamlet/nvim-luapad'
     use 'ful1e5/onedark.nvim'
+    use 'tribela/vim-transparent'
+
+    use 'nvim-tree/nvim-web-devicons'
+    use 'hrsh7th/cmp-nvim-lsp-signature-help'
+
     use {
         'nvim-lualine/lualine.nvim',
-        requires = {'nvim-tree/nvim-web-devicons', opt=true}
+        requires = {'nvim-tree/nvim-web-devicons', opt=false}
     }
+    use 'sainnhe/everforest'
+    use 'folke/tokyonight.nvim'
+
+    -- LSP stuff 
+    use 'neovim/nvim-lspconfig'
+    use 'folke/trouble.nvim'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/vim-vsnip'
+    use 'RRethy/vim-illuminate'
+    use 'Maan2003/lsp_lines.nvim'
+
+
+    --[[ use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},             -- Required
+            {                                      -- Optional
+            'williamboman/mason.nvim',
+            run = function()
+                pcall(vim.cmd, 'MasonUpdate')
+            end,
+        },
+        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},     -- Required
+        {'hrsh7th/cmp-nvim-lsp'}, -- Required
+        {'L3MON4D3/LuaSnip'},     -- Required
+    } 
+}--]]
 end)

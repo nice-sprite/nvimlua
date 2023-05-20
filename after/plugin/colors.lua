@@ -24,7 +24,27 @@ require('onenord').setup({
 	custom_colors = {}, -- Overwrite default colors
 })
 
+local c = require('vscode.colors').get_colors();
+require('vscode').setup({
+    transparent = true,
+    color_overrides = {
+        vscLineNumber = '#00beff'
+    },
+    group_overrides = {
+        Cursor = {fg = c.vscDarkBlue,}
+    },
+})
+require('vscode').load();
 
-vim.cmd.colorscheme('onedark')
 vim.api.nvim_set_hl(0, 'Normal', {bg='none'})
 vim.api.nvim_set_hl(0, 'NormalFloat', {bg='none'})
+
+-- vim.api.nvim_create_autocmd("colorscheme", {
+--     pattern = '*',
+--     callback = function(ev)
+--         vim.api.nvim_set_hl(0, 'Normal', {bg='none'})
+--         vim.api.nvim_set_hl(0, 'NormalFloat', {bg='none'})
+--     end
+-- 
+-- })
+

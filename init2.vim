@@ -140,10 +140,6 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <F2>  <cmd>lua vim.lsp.buf.rename()<CR>
 
-
-
-
-
 lua <<EOF
 require('lualine').setup()
 
@@ -197,128 +193,128 @@ require'nvim-treesitter.configs'.setup {
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 require'nvim-tree'.setup {
-  disable_netrw        = false,
-  hijack_netrw         = false,
-  open_on_setup        = false,
-  ignore_ft_on_setup   = {},
-  auto_reload_on_write = true,
-  open_on_tab          = false,
-  hijack_cursor        = false,
-  update_cwd           = false,
-  hijack_unnamed_buffer_when_opening = false,
-  hijack_directories   = {
-    enable = true,
-    auto_open = true,
-  },
-  renderer  = {
-      icons = { 
-          show = {
-              file = false, 
-              folder = false,
-              folder_arrow = false,
-              git = false 
-              }
-          }
-      },
-  diagnostics = {
-    enable = false,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    }
-  },
-  update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
-    ignore_list = {}
-  },
-  system_open = {
-    cmd  = nil,
-    args = {}
-  },
-  filters = {
-    dotfiles = false,
-    custom = {}
-  },
-  git = {
-    enable = true,
-    ignore = true,
-    timeout = 500,
-  },
-  view = {
-    width = 30,
-    hide_root_folder = false,
-    side = 'left',
-    preserve_window_proportions = false,
-    mappings = {
-      custom_only = false,
-      list = {}
-    },
-    number = false,
-    relativenumber = false,
-    signcolumn = "yes"
-  },
-  trash = {
-    cmd = "trash",
-    require_confirm = true
-  },
-  actions = {
-    change_dir = {
-      enable = true,
-      global = false,
-    },
-    open_file = {
-      quit_on_open = false,
-      window_picker = {
+    disable_netrw        = false,
+    hijack_netrw         = false,
+    open_on_setup        = false,
+    ignore_ft_on_setup   = {},
+    auto_reload_on_write = true,
+    open_on_tab          = false,
+    hijack_cursor        = false,
+    update_cwd           = false,
+    hijack_unnamed_buffer_when_opening = false,
+    hijack_directories   = {
         enable = true,
-        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-        exclude = {
-          filetype = {
-            "notify",
-            "packer",
-            "qf"
-          }
+        auto_open = true,
+    },
+    renderer  = {
+        icons = { 
+            show = {
+                file = false, 
+                folder = false,
+                folder_arrow = false,
+                git = false 
+            }
+            }
+        },
+    diagnostics = {
+        enable = false,
+        icons = {
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
         }
-      }
+        },
+    update_focused_file = {
+        enable      = false,
+        update_cwd  = false,
+        ignore_list = {}
+    },
+    system_open = {
+        cmd  = nil,
+        args = {}
+    },
+    filters = {
+        dotfiles = false,
+        custom = {}
+    },
+    git = {
+        enable = true,
+        ignore = true,
+        timeout = 500,
+    },
+    view = {
+        width = 30,
+        hide_root_folder = false,
+        side = 'left',
+        preserve_window_proportions = false,
+        mappings = {
+            custom_only = false,
+            list = {}
+        },
+        number = false,
+        relativenumber = false,
+        signcolumn = "yes"
+    },
+    trash = {
+        cmd = "trash",
+        require_confirm = true
+    },
+    actions = {
+        change_dir = {
+            enable = true,
+            global = false,
+        },
+        open_file = {
+            quit_on_open = false,
+            window_picker = {
+                enable = true,
+                chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+                exclude = {
+                    filetype = {
+                        "notify",
+                        "packer",
+                        "qf"
+                    }
+                    }
+                }
+            }
+        }
     }
-  }
-}
 
 
 local opts = {noremap=true, silent=true}
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    -- Enable completion triggered by <c-x><c-o>
+    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+    -- Mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 end
 
 local servers = { 'clangd', 'sumneko_lua', 'jsonls', 'rust_analyzer', 'pyright' }
 for _, s in pairs(servers) do
-     require('lspconfig')[s].setup{
-         on_attach = on_attach,
-         flags = { debounce_text_changes = 150 },
-         opts
-     }
+    require('lspconfig')[s].setup{
+        on_attach = on_attach,
+        flags = { debounce_text_changes = 150 },
+        opts
+    }
 end
 
 local rust_tools_opts = {
@@ -332,18 +328,15 @@ local rust_tools_opts = {
     },
     server = {
         settings = {
-            ["rust-analyzer"] = {
---                checkOnSave = { command = "clippy" },
             }
         }
     }
-}
 
--- require('rust-tools').setup(rust_tools_opts)
+    -- require('rust-tools').setup(rust_tools_opts)
 
-local cmp = require'cmp'
+    local cmp = require'cmp'
 
-cmp.setup({
+    cmp.setup({
     snippet = {
         expand = function(args) vim.fn["vsnip#anonymous"](args.body) end 
     },
@@ -358,16 +351,16 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({
-          behavior = cmp.ConfirmBehavior.Insert,
-          select = true,
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = true,
         })
-    },
+        },
     -- Installed sources
-      sources = {
+    sources = {
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
         { name = 'path' },
         { name = 'buffer' },
-      },
-})
-EOF
+    },
+    })
+    EOF

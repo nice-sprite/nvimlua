@@ -79,26 +79,55 @@ _G.packer_plugins = {
     path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\aurora",
     url = "https://github.com/ray-x/aurora"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
+    url = "https://github.com/hrsh7th/cmp-path"
+  },
+  everforest = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\everforest",
+    url = "https://github.com/sainnhe/everforest"
+  },
   harpoon = {
     loaded = true,
     path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\harpoon",
     url = "https://github.com/theprimeagen/harpoon"
+  },
+  ["lsp_lines.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp_lines.nvim",
+    url = "https://github.com/Maan2003/lsp_lines.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
     path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  ["lush.nvim"] = {
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lush.nvim",
-    url = "https://github.com/rktjmp/lush.nvim"
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["mellifluous.nvim"] = {
-    config = { "\27LJ\2\nm\0\0\3\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\28colorscheme mellifluous\bcmd\bvim\nsetup\16mellifluous\frequire\0" },
+  ["nvim-lspconfig"] = {
     loaded = true,
-    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mellifluous.nvim",
-    url = "https://github.com/ramojus/mellifluous.nvim"
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-luapad"] = {
     loaded = true,
@@ -111,9 +140,8 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\nvim-web-devicons",
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
@@ -141,10 +169,35 @@ _G.packer_plugins = {
     path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   undotree = {
     loaded = true,
     path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-transparent"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-transparent",
+    url = "https://github.com/tribela/vim-transparent"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "C:\\Users\\nice_sprite\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-vsnip",
+    url = "https://github.com/hrsh7th/vim-vsnip"
   },
   ["vscode.nvim"] = {
     loaded = true,
@@ -154,10 +207,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: mellifluous.nvim
-time([[Config for mellifluous.nvim]], true)
-try_loadstring("\27LJ\2\nm\0\0\3\0\6\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\0016\0\3\0009\0\4\0'\2\5\0B\0\2\1K\0\1\0\28colorscheme mellifluous\bcmd\bvim\nsetup\16mellifluous\frequire\0", "config", "mellifluous.nvim")
-time([[Config for mellifluous.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
